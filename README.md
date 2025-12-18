@@ -30,7 +30,7 @@
 ---
 ## 🔥 News
 
-- **[2025.12.19]** 📄✨ The paper is officially released,  **  training and inference pipelines** will be released soon this month.
+- **[2025.12.19]** 📄✨ The paper is officially released,**training and inference pipelines** will be released soon this month.
 
 
 
