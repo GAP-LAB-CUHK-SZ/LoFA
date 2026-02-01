@@ -14,8 +14,10 @@
 <a href="https://jaeger416.github.io/lofa/" target="_blank">
     <img alt="Github" src="https://img.shields.io/badge/⚒️_Github-page-white.svg" height="20" />
 </a>
+<a href="https://huggingface.co/ymhao/LoFA_v0" target="_blank">
+  <img alt="Hugging Face" src="https://img.shields.io/badge/🤗_HuggingFace-LoFA-yellow.svg" height="20" />
+</a>
 <br>
-
 
 ***[Yiming Hao<sup>1*</sup>](https://scholar.google.com/citations?user=mlu1Oo4AAAAJ&hl=en), [Mutian Xu<sup>1*</sup>](https://mutianxu.github.io/), [Chongjie Ye<sup>2,3,1</sup>](https://github.com/hugoycj), [Jie Qin<sup>2</sup>](#), [Shunlin Lu<sup>2</sup>](https://shunlinlu.github.io/), [Yipeng Qin<sup>2</sup>](https://yipengqin.github.io/), [Xiaoguang Han<sup>1,2,3†</sup>](https://gaplab.cuhk.edu.cn/pages/people)***  
 <small>*equal contribution; †project lead</small>  
