@@ -40,7 +40,7 @@ model:
   out_act: "softplus"
 
 data:
-  data_path: /data2/yiming/wan_lora/hyperlora_dataset_0901
+  data_path: /path/to/your/dataset
   meta_path: metadata.json
   n_layers: ${max_num_layers}
   valid_layers: ${target_modules}

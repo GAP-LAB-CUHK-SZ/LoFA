@@ -22,7 +22,7 @@ checkpoint:
   save_freq: 1000
 
 data:
-  data_path: /cuhk_sz_image_tmp/chongjie/code/vggt/wan_lora/hyperlora_dataset_0901
+  data_path: /path/to/your/dataset
   meta_path: metadata.json
   n_layers: ${max_num_layers}
   valid_layers: ${target_modules}
