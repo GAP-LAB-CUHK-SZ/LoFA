@@ -12,7 +12,7 @@
     <img alt="arXiv" src="https://img.shields.io/badge/arXiv-LoFA-red?logo=arxiv" height="20" />
 </a>
 <a href="https://jaeger416.github.io/lofa/" target="_blank">
-    <img alt="Github" src="https://img.shields.io/badge/⚒️_Github-page-white.svg" height="20" />
+    <img alt="Github" src="https://img.shields.io/badge/⚒️_Project-page-white.svg" height="20" />
 </a>
 <a href="https://huggingface.co/ymhao/LoFA_v0" target="_blank">
   <img alt="Hugging Face" src="https://img.shields.io/badge/🤗_HuggingFace-LoFA-yellow.svg" height="20" />
