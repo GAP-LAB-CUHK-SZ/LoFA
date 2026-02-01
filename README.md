@@ -90,7 +90,7 @@ python demo_stage2.py
 ```
 
 Notes:
-+ Current models is a preview version and only trained on MotionX videos for validating the methology and has limited generalization. Thus the [prompts of MotionX](https://huggingface.co/ymhao/LoFA_v0) is provided and recommanded
++ Current models is a preview version and only trained on MotionX videos for validating the methology and has limited generalization. Thus the [prompts of MotionX](https://huggingface.co/ymhao/LoFA_v0) is provided and recommanded.
 + We are training a new version based on large-scale web videos.
 
 ## TODO
