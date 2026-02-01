@@ -1,0 +1,6 @@
+transformers==4.51.3
+diffusers==0.34.0
+iopath
+hydra-core
+OmegaConf
+peft

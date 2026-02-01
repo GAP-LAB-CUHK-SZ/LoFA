@@ -1,0 +1,9 @@
+outputs
+checkpoints
+__pycache__
+*.egg-info
+results
+launch.json
+Wan-AI
+eval_1.sh
+eval_2.sh

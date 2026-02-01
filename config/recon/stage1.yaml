@@ -1,0 +1,71 @@
+exp_name: stage1
+batch_size: 24
+accum_steps: 2
+max_steps: 20000
+mixed_precision: bf16
+save_path: ./checkpoints/stage1
+seed_value: 42
+target_modules:
+  - "self_attn_q"
+  - "self_attn_k"
+  - "self_attn_v"
+  - "self_attn_o"
+  - "cross_attn_q"
+  - "cross_attn_k"
+  - "cross_attn_v"
+  - "cross_attn_o"
+max_num_layers: 30
+
+checkpoint:
+  resume_from_checkpoint: False
+  save_freq: 5000
+
+model:
+  _target_: lofa.hyper_modulator_mask.TransformerV2
+  context_dim: 4096
+  d_model: 768
+  n_heads: 12
+  n_blocks: 8
+  patch_size: 96
+  num_type: 8
+  lora_rank: 32
+  num_depth: ${max_num_layers}
+  factorized: False
+  qk_norm: true
+  use_cls: true
+  decode_cls: False
+  gradient_checkpointing: true
+  tau: 0.02
+  temperature: 0.1
+  out_act: "softplus"
+
+data:
+  data_path: /data2/yiming/wan_lora/hyperlora_dataset_0901
+  meta_path: metadata.json
+  n_layers: ${max_num_layers}
+  valid_layers: ${target_modules}
+  rank: 32
+  num_workers: 8
+  layers_per_sample: 10
+
+loss:
+  ce_loss:
+    type: ce_loss
+    loss_weight: 1.0
+  l2_penalty:
+    type: l2_penalty
+    loss_weight: 1e-4
+
+optim:
+  learning_rate: 2.5e-4
+  adam_beta1: 0.9
+  adam_beta2: 0.95
+  adam_weight_decay: 0.01
+  adam_epsilon: 1e-8
+  lr_scheduler: constant_with_warmup
+  lr_warmup_steps: 500
+  grad_norm: 1.0
+
+wan:
+  model_path: "models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors"
+

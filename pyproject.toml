@@ -1,0 +1,33 @@
+[project]
+authors = [{name = "Yiming Hao", email = "haoym1016@gmail.com"}]
+dependencies = [
+    "numpy",
+    "einops",
+]
+name = "lofa"
+requires-python = ">= 3.10"
+version = "0.0.1"
+
+# Using setuptools as the build backend
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+# setuptools configuration
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["lofa*"]
+
+# Pixi configuration
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+
+[tool.pixi.pypi-dependencies]
+lofa = { path = ".", editable = true }
+
+[tool.pixi.environments]
+default = { solve-group = "default" }
+demo = { features = ["demo"], solve-group = "default" }
+
+[tool.pixi.tasks]

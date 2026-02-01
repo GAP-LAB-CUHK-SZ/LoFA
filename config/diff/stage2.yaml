@@ -1,0 +1,68 @@
+batch_size: 1
+accum_steps: 2
+max_steps: 20000
+mixed_precision: bf16
+seed_value: 42
+exp_name: stage2
+diffusion_loss_weight: 10
+save_path: ./checkpoints
+target_modules:
+  - "self_attn_q"
+  - "self_attn_k"
+  - "self_attn_v"
+  - "self_attn_o"
+  - "cross_attn_q"
+  - "cross_attn_k"
+  - "cross_attn_v"
+  - "cross_attn_o"
+max_num_layers: 30
+
+checkpoint:
+  resume_from_checkpoint: checkpoints/transformerv2_stage2_patch96-0127_1059/checkpoint-4000
+  save_freq: 1000
+
+data:
+  data_path: /cuhk_sz_image_tmp/chongjie/code/vggt/wan_lora/hyperlora_dataset_0901
+  meta_path: metadata.json
+  n_layers: ${max_num_layers}
+  valid_layers: ${target_modules}
+  rank: 32
+  num_workers: 8
+  use_response_prior: true
+
+model:
+  _target_: lofa.hyper_modulator_transformer.TransformerV2_stage2
+  context_dim: 4096
+  d_model: 768
+  n_heads: 12
+  n_blocks: 8
+  patch_size: 96
+  num_type: 8
+  lora_rank: 32
+  num_depth: ${max_num_layers}
+  factorized: False
+  qk_norm: true
+  use_cls: true
+  decode_cls: False
+  gradient_checkpointing: False
+
+loss:
+  deltaW_l1_loss:
+    type: deltaW_l1_loss
+    loss_weight: 1.0
+
+optim:
+  learning_rate: 2.5e-4
+  adam_beta1: 0.9
+  adam_beta2: 0.95
+  adam_weight_decay: 0.01
+  adam_epsilon: 1e-8
+  lr_scheduler: constant_with_warmup
+  lr_warmup_steps: 500
+  grad_norm: 1.0
+
+wan:
+  model_path: "models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors"
+  target_modules: "q,k,v,o,"
+  use_gradient_checkpointing: True
+  use_gradient_checkpointing_offload: False
