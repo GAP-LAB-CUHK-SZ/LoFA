@@ -115,14 +115,13 @@ Notes:
 If you use this work in your research, please cite our paper:
 
 ```bibtex
-@misc{hao2025lofalearningpredictpersonalized,
-      title={LoFA: Learning to Predict Personalized Priors for Fast Adaptation of Visual Generative Models}, 
-      author={Yiming Hao and Mutian Xu and Chongjie Ye and Jie Qin and Shunlin Lu and Yipeng Qin and Xiaoguang Han},
-      year={2025},
-      eprint={2512.08785},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2512.08785}
+@InProceedings{Hao_2026_CVPR,
+    author    = {Hao, Yiming and Xu, Mutian and Ye, Chongjie and Qin, Jie and Lu, Shunlin and Qin, Yipeng and Han, Xiaoguang},
+    title     = {LoFA: Learning to Predict Personalized Prior for Fast Adaptation of Visual Generative Models},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2026},
+    pages     = {21986-21996}
 }
 ```
 ---
