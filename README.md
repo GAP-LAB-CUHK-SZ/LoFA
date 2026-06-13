@@ -1,4 +1,4 @@
-# **LoFA: Learning to Predict Personalized Priors for Fast Adaptation of Visual Generative Models**
+# **LoFA: Learning to Predict Personalized Priors for Fast Adaptation of Visual Generative Models (CVPR 2026)**
 
 <sub>Official PyTorch Implementation</sub>
 
@@ -31,6 +31,8 @@
 
 ---
 ## 🔥 News
+- **[2026.02]** 🎉 LoFA is accepted to **CVPR 2026**!
+
 - **[2025.2.1]** 📄✨ Training and inferencing code is now available. A preview model now can be downloaded from  [huggingface](https://huggingface.co/ymhao/LoFA_v0).
 
 - **[2025.12.19]** 📄✨ The paper is officially released,**training and inference pipelines** will be released soon this month.
